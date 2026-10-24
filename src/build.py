@@ -96,9 +96,9 @@ def body(page, L):
 <h2>{n("Bedrijfsgegevens","Company details")}</h2><dl class="facts">
 <dt>{n("Handelsnaam","Trade name")}</dt><dd>Food Porter</dd>
 <dt>{n("Onderneming","Company")}</dt><dd>Sonic Jobs V.O.F. {n("h.o.d.n.","trading as")} Food Porter</dd>
-<dt>KvK</dt><dd>{ph("KvK-nummer volgt","KvK number to follow",L)}</dd>
-<dt>{n("Btw-nummer","VAT number")}</dt><dd>{ph("volgt","to follow",L)}</dd>
-<dt>{n("Adres","Address")}</dt><dd>{ph("adres volgt","address to follow",L)}, Tilburg</dd></dl></section>"""
+<dt>KvK</dt><dd>42169998</dd>
+<dt>{n("Btw-nummer","VAT number")}</dt><dd>NL870021977B01</dd>
+<dt>{n("Adres","Address")}</dt><dd>Amarantstraat 6, 5044 RK Tilburg</dd></dl></section>"""
     if page == "faq":
         qa = [(n("Wanneer start Food Porter?","When does Food Porter launch?"), n("Op 1 januari 2027 in Tilburg. Tot die tijd draait de app in testmodus.","On 1 January 2027 in Tilburg. Until then the app runs in test mode.")),
               (n("Waar bezorgen jullie?","Where do you deliver?"), n("Bij de start binnen ongeveer 5 km van het centrum van Tilburg. De app controleert je adres.","At launch within about 5 km of Tilburg city centre. The app checks your address.")),
@@ -116,8 +116,8 @@ def body(page, L):
 <dt>{n("Restaurants","Restaurants")}</dt><dd><a href="mailto:partners@foodporter.nl">partners@foodporter.nl</a></dd>
 <dt>{n("Privacy","Privacy")}</dt><dd><a href="mailto:privacy@foodporter.nl">privacy@foodporter.nl</a></dd>
 <dt>{n("Onderneming","Company")}</dt><dd>Sonic Jobs V.O.F. {n("h.o.d.n.","trading as")} Food Porter</dd>
-<dt>{n("Adres","Address")}</dt><dd>{ph("adres volgt","address to follow",L)}, Tilburg</dd>
-<dt>KvK</dt><dd>{ph("KvK-nummer volgt","KvK number to follow",L)}</dd></dl>
+<dt>{n("Adres","Address")}</dt><dd>Amarantstraat 6, 5044 RK Tilburg</dd>
+<dt>KvK</dt><dd>42169998</dd></dl>
 <p>{n("Heb je een vraag over een bestelling? Gebruik dan de chat bij je bestelling in de app, dan hebben we meteen alle gegevens.","Question about an order? Use the chat on your order in the app so we have all the details right away.")}</p></section>"""
     if page == "legal":
         docs = [(n("Privacyverklaring","Privacy statement"), "/privacy/"), (n("Algemene voorwaarden","Terms and conditions"), "/terms/"),
@@ -125,7 +125,7 @@ def body(page, L):
         li = "".join(f'<li><a href="{APP}{p}">{t}</a></li>' for t, p in docs)
         return f"""<section class="wrap narrow"><h1>{n("Juridisch","Legal")}</h1>
 <p class="note">{n("Let op: deze documenten zijn concepten en worden nog beoordeeld door een Nederlandse advocaat.","Please note: these documents are drafts pending review by a Dutch lawyer.")}</p><ul class="links">{li}</ul>
-<p>{n("Contractspartij en verwerkingsverantwoordelijke: Sonic Jobs V.O.F. h.o.d.n. Food Porter, Tilburg.","Contracting party and data controller: Sonic Jobs V.O.F. trading as Food Porter, Tilburg.")}</p>
+<p>{n("Contractspartij en verwerkingsverantwoordelijke: Sonic Jobs V.O.F. h.o.d.n. Food Porter, Amarantstraat 6, 5044 RK Tilburg, KvK 42169998, btw NL870021977B01.","Contracting party and data controller: Sonic Jobs V.O.F. trading as Food Porter, Amarantstraat 6, 5044 RK Tilburg, KvK 42169998, VAT NL870021977B01.")}</p>
 <h2>{n("Deze website","This website")}</h2><p>{n("Deze website gebruikt geen tracking- of advertentiecookies en verzamelt geen persoonsgegevens. De hosting (GitHub Pages) kan technische gegevens zoals je IP-adres kort verwerken om de site te leveren.","This website uses no tracking or advertising cookies and collects no personal data. The host (GitHub Pages) may briefly process technical data such as your IP address to serve the site.")}</p></section>"""
 
 META = {
@@ -157,7 +157,7 @@ def layout(L, title, desc, content, path, alt_path, extra_head=""):
 <nav aria-label="{n('Hoofdmenu','Main menu')}"><ul>{nav}</ul></nav>
 <div class="tools"><a class="lang" href="{sw}" hreflang="{n('en','nl')}" lang="{n('en','nl')}">{n("English","Nederlands")}</a> <a class="btn btn-sm" href="{APP}/">{n("Bestellen","Order")}</a></div></div></header>
 <main id="main">{content}</main>
-<footer class="foot"><div class="wrap foot-in"><div><b>Food Porter</b><br>Tilburg · {n("start 1 januari 2027","launching 1 January 2027")}<br>Sonic Jobs V.O.F. h.o.d.n. Food Porter · KvK {ph("volgt","to follow",L)}</div>
+<footer class="foot"><div class="wrap foot-in"><div><b>Food Porter</b><br>Tilburg · {n("start 1 januari 2027","launching 1 January 2027")}<br>Sonic Jobs V.O.F. h.o.d.n. Food Porter · Amarantstraat 6, 5044 RK Tilburg · KvK 42169998 · {n("btw","VAT")} NL870021977B01</div>
 <ul><li><a href="{PAGES['legal'][L]}">{T['legal'][L]}</a></li><li><a href="{APP}/privacy/">{n("Privacy","Privacy")}</a></li><li><a href="{APP}/terms/">{n("Voorwaarden","Terms")}</a></li><li><a href="{APP}/cookies/">Cookies</a></li><li><a href="{APP}/accessibility/">{n("Toegankelijkheid","Accessibility")}</a></li></ul>
 <ul><li><a href="{PAGES['contact'][L]}">Contact</a></li><li><a href="{PAGES['faq'][L]}">FAQ</a></li><li><a href="{APP}/">{n("Naar de app","Open the app")}</a></li></ul></div>
 <p class="wrap small">{n("Een project van Sonic Jobs V.O.F.","Powered by Sonic Jobs V.O.F.")} · {n("Geen tracking-cookies op deze site.","No tracking cookies on this site.")}</p></footer></body></html>"""

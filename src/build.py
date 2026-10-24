@@ -95,7 +95,7 @@ def body(page, L):
 <p>{n("Food Porter is een project van Sonic Jobs V.O.F.","Food Porter is a project powered by Sonic Jobs V.O.F.")}</p>
 <h2>{n("Bedrijfsgegevens","Company details")}</h2><dl class="facts">
 <dt>{n("Handelsnaam","Trade name")}</dt><dd>Food Porter</dd>
-<dt>{n("Onderneming","Company")}</dt><dd>Sonic Jobs V.O.F.</dd>
+<dt>{n("Onderneming","Company")}</dt><dd>Sonic Jobs V.O.F. {n("h.o.d.n.","trading as")} Food Porter</dd>
 <dt>KvK</dt><dd>{ph("KvK-nummer volgt","KvK number to follow",L)}</dd>
 <dt>{n("Btw-nummer","VAT number")}</dt><dd>{ph("volgt","to follow",L)}</dd>
 <dt>{n("Adres","Address")}</dt><dd>{ph("adres volgt","address to follow",L)}, Tilburg</dd></dl></section>"""
@@ -115,7 +115,7 @@ def body(page, L):
 <dt>{n("Klantenservice","Customer support")}</dt><dd><a href="mailto:support@foodporter.nl">support@foodporter.nl</a></dd>
 <dt>{n("Restaurants","Restaurants")}</dt><dd><a href="mailto:partners@foodporter.nl">partners@foodporter.nl</a></dd>
 <dt>{n("Privacy","Privacy")}</dt><dd><a href="mailto:privacy@foodporter.nl">privacy@foodporter.nl</a></dd>
-<dt>{n("Onderneming","Company")}</dt><dd>Sonic Jobs V.O.F.</dd>
+<dt>{n("Onderneming","Company")}</dt><dd>Sonic Jobs V.O.F. {n("h.o.d.n.","trading as")} Food Porter</dd>
 <dt>{n("Adres","Address")}</dt><dd>{ph("adres volgt","address to follow",L)}, Tilburg</dd>
 <dt>KvK</dt><dd>{ph("KvK-nummer volgt","KvK number to follow",L)}</dd></dl>
 <p>{n("Heb je een vraag over een bestelling? Gebruik dan de chat bij je bestelling in de app, dan hebben we meteen alle gegevens.","Question about an order? Use the chat on your order in the app so we have all the details right away.")}</p></section>"""
@@ -125,6 +125,7 @@ def body(page, L):
         li = "".join(f'<li><a href="{APP}{p}">{t}</a></li>' for t, p in docs)
         return f"""<section class="wrap narrow"><h1>{n("Juridisch","Legal")}</h1>
 <p class="note">{n("Let op: deze documenten zijn concepten en worden nog beoordeeld door een Nederlandse advocaat.","Please note: these documents are drafts pending review by a Dutch lawyer.")}</p><ul class="links">{li}</ul>
+<p>{n("Contractspartij en verwerkingsverantwoordelijke: Sonic Jobs V.O.F. h.o.d.n. Food Porter, Tilburg.","Contracting party and data controller: Sonic Jobs V.O.F. trading as Food Porter, Tilburg.")}</p>
 <h2>{n("Deze website","This website")}</h2><p>{n("Deze website gebruikt geen tracking- of advertentiecookies en verzamelt geen persoonsgegevens. De hosting (GitHub Pages) kan technische gegevens zoals je IP-adres kort verwerken om de site te leveren.","This website uses no tracking or advertising cookies and collects no personal data. The host (GitHub Pages) may briefly process technical data such as your IP address to serve the site.")}</p></section>"""
 
 META = {
@@ -156,7 +157,7 @@ def layout(L, title, desc, content, path, alt_path, extra_head=""):
 <nav aria-label="{n('Hoofdmenu','Main menu')}"><ul>{nav}</ul></nav>
 <div class="tools"><a class="lang" href="{sw}" hreflang="{n('en','nl')}" lang="{n('en','nl')}">{n("English","Nederlands")}</a> <a class="btn btn-sm" href="{APP}/">{n("Bestellen","Order")}</a></div></div></header>
 <main id="main">{content}</main>
-<footer class="foot"><div class="wrap foot-in"><div><b>Food Porter</b><br>Tilburg · {n("start 1 januari 2027","launching 1 January 2027")}<br>KvK {ph("volgt","to follow",L)}</div>
+<footer class="foot"><div class="wrap foot-in"><div><b>Food Porter</b><br>Tilburg · {n("start 1 januari 2027","launching 1 January 2027")}<br>Sonic Jobs V.O.F. h.o.d.n. Food Porter · KvK {ph("volgt","to follow",L)}</div>
 <ul><li><a href="{PAGES['legal'][L]}">{T['legal'][L]}</a></li><li><a href="{APP}/privacy/">{n("Privacy","Privacy")}</a></li><li><a href="{APP}/terms/">{n("Voorwaarden","Terms")}</a></li><li><a href="{APP}/cookies/">Cookies</a></li><li><a href="{APP}/accessibility/">{n("Toegankelijkheid","Accessibility")}</a></li></ul>
 <ul><li><a href="{PAGES['contact'][L]}">Contact</a></li><li><a href="{PAGES['faq'][L]}">FAQ</a></li><li><a href="{APP}/">{n("Naar de app","Open the app")}</a></li></ul></div>
 <p class="wrap small">{n("Een project van Sonic Jobs V.O.F.","Powered by Sonic Jobs V.O.F.")} · {n("Geen tracking-cookies op deze site.","No tracking cookies on this site.")}</p></footer></body></html>"""

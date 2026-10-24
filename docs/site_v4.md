@@ -1,0 +1,1 @@
+# site v4 — 2026-10-24: KvK 42169998, btw NL870021977B01, Amarantstraat 6, 5044 RK Tilburg in footer, Over ons, Contact, Juridisch. 16/16 pages, 27 links OK. Screen: /workspace/screens_site_v4/footer_nl.png

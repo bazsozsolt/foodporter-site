@@ -168,7 +168,7 @@ for k, paths in PAGES.items():
         t, d = META[k][L]
         write(paths[L], layout(L, t, d, body(k, L), paths[L], paths)); urls.append(paths[L])
 # 404 with fallback: old app path /foodporter-app/* -> app.foodporter.nl/*
-fallback = """<script>(function(){var p=location.pathname;if(p.indexOf('/foodporter-app')===0){location.replace('https://app.foodporter.nl'+(p.slice(15)||'/')+location.search+location.hash);}})();</script>"""
+fallback = """<script>(function(){var p=location.pathname,A='https://app.foodporter.nl',q=location.search+location.hash;if(p.indexOf('/foodporter-app')===0){location.replace(A+(p.slice(15)||'/')+q);return;}var s=p.split('/')[1];if(/^(login|cart|checkout|order|orders|my-orders|admin|rider|rider-info|restaurant|group|r|support|welcome|privacy|terms|cookies|accessibility|offline|legal|reset-password|account)$/.test(s)){location.replace(A+p+q);}})();</script>"""
 nf = '<section class="wrap narrow"><h1>Pagina niet gevonden · Page not found</h1><p>Deze pagina bestaat niet (meer). · This page does not exist.</p><p class="ctas"><a class="btn" href="/">Naar de homepage</a> <a class="btn btn-alt" href="/en/">Go to the homepage</a></p></section>'
 write("/404.html", layout(0, "Niet gevonden – Food Porter", "Pagina niet gevonden.", nf, "/404.html", None, fallback + '<meta name="robots" content="noindex">'))
 write("/foodporter-app/", '<!doctype html><html lang="nl"><head><meta charset="utf-8"><title>Food Porter app</title>' + fallback + '<meta http-equiv="refresh" content="0;url=https://app.foodporter.nl/"><link rel="canonical" href="https://app.foodporter.nl/"><meta name="robots" content="noindex"></head><body><p><a href="https://app.foodporter.nl/">Naar de app · Open the app</a></p></body></html>')
